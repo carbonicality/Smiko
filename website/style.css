@@ -1,0 +1,151 @@
+body{
+    margin: 0px;
+    font-family: monospace;
+    cursor: default;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+h1{
+    display: inline;
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 50px;
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+h2{
+    margin: 0px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+h3{
+    margin: 0px;
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+p{
+    font-size: 16px;
+}
+
+i{
+    font-size: 12px;
+}
+
+a{
+    color: #212121;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 3px;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+a:hover{
+    background-color: #d6d6d6;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+code{
+    display: block;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #212121;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+img{
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+.icon{
+    display: inline;
+    vertical-align: middle;
+    margin: 0px;
+    width: 52px;
+    height: 52px;
+    border: 4px solid #FFFFFF;
+    border-radius: 52px;
+}
+
+.topBar{
+    padding: 5px;
+    padding-top: 1%;
+    width: 99%;
+    height: 10vh;
+    margin: 0 auto 0;
+    text-align: center;
+    background-color: #212121;
+    border-radius: 1px;
+}
+
+.bottomBar{
+    padding: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 99%;
+    /*height: 56vh;*/
+    margin: 0 auto 0;
+    background-color: #212121;
+    border-radius: 1px;
+}
+
+.content{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.blog {
+    width: 80%;
+    margin: 0 auto 0;
+}
+
+.centered {
+    text-align: center;
+}
+
+.projects{
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    border-radius: 15px;
+    border: 3px solid gray;
+}
+
+.projectBox{
+    transition: width 0.2s, height 0.2s, border 0.2s, font-size 0.2s;
+    display: inline-block;
+    width: 90%;
+    background-color: #151515;
+    border: 3px solid white;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px auto 5px;
+    text-align: center;
+}
+
+.projectBox:hover{
+    transition: width 0.2s, height 0.2s, border 0.2s, font-size 0.2s;
+    background-color: #212121;
+    width: 92%;
+    font-size: 35px;
+    border: 4px solid white;
+    cursor: pointer;
+}
