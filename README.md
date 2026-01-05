@@ -65,4 +65,5 @@ More information on the [Code Of Conduct](CODE_OF_CONDUCT.md) and [Security](SEC
 - Google (unaffiliated): Developing the GSC and all provided firmware
 
 [Join HavenOverflow](https://discord.gg/BtJ6j2eJrU)
+
 [Join Crosbreaker](https://discord.crosbreaker.dev)
