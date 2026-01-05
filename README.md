@@ -15,7 +15,7 @@ You can see a writeup of Smiko on [the website](https://smiko.havenoverflow.dev)
 ## Utilities Usage
 There are many ways by which Smiko (and all software contained in this repo) can be utilized, of which here are the most straight-forward:
 - [RMA Shim](/docs/rma_shim.md) (Safest, Recommended): Use Smiko or RMASmoke using the TPM link existing on a modified RMA shim running in recovery mode.
-- [Recovery Image](/docs/reco_image.md) (Universal): Use Smiko or RMASmoke using the TPM link existing on a patched Recovery Image.
+- [Recovery Image](/docs/reco_image.md) ~~(Universal): Use Smiko or RMASmoke using the TPM link existing on a patched Recovery Image.~~ (This will be replaced by Recomm3r, a project by crosbreaker that provides a GUI to modified recovery images)
 - [SuzyQ](/docs/suzyq.md) (Universal, Recommended): Use Smiko using a GSC Debug Accessory and a piece of software.
 - [Servo/C2D2](/docs/servo.md) (Universal): Use Smiko or Shaft using a Servo/C2D2 hardware header (Requires soldering skill!)
 - [Developer Mode](/docs/devmode.md): Use Smiko or RMASmoke using the command line on a Chromebook in Developer Mode (Cannot be done whilst enrolled _unless_ you're running [Shimboot](https://github.com/ading2210/shimboot) or a similar alternative).
