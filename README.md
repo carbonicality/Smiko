@@ -1,5 +1,5 @@
 # Smiko
-Smiko - **S**mite **M**anagement by h**I**jac**K**ing the cr50
+Smiko - **S**mite **M**anagement by h**I**jac**K**ing the cr5**0**
 
 ![Smiko Logo](/logo.png)
 
