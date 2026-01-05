@@ -1,16 +1,11 @@
 # Custom Firmware
 Running Custom Firmware on an H1 GSC is not as simple as it might seem at first glance. Assuming you have a way to solder to your device and actually flash the firmware, you also have to trick the chip into actually running it. This guide will cover how to do that.
-Running Custom Firmware on an H1 GSC is not as simple as it might seem at first glance. Assuming you have a way to solder to your device and actually flash the firmware, you also have to trick the chip into actually running it. This guide will cover how to do that.
 
 ### Be warned!!!!
-All existing methods of Custom Firmware are _tethered_! This means you'll have to redo whatever method you choose each time the GSC resets (for BootCon, you only need to install the firmware once, but the console part you must redo each reset)!
 All existing methods of Custom Firmware are _tethered_! This means you'll have to redo whatever method you choose each time the GSC resets (for BootCon, you only need to install the firmware once, but the console part you must redo each reset)!
 
 
 ## BootCon Method
-BootCon works by flashing our custom firmware image to the RW_A section of firmware, a non-booting image to RO_A, and a dev-signed RO 0.0.9 image to the RO_B which allows us to run the ancient 0.0.6 image which we flash to RW_B, and doesnt lower the GLOBALSEC execution level, allowing our CFW more control over the chip. It uses the SPIFlash utility in the CR50's bootrom to bypass both downgrade protections and restrictions against writing to the active RO image which are present in both the typical updater and the rescue utility. It then requires you to use the outdated version's console to write arbitrary data to GLOBALSEC registers, unlocking the custom firmware's execution and then requires you to jump to that custom firmware, where we're able to take full control.
-
-First thing's first, you'll want to build the firmware and injector. You can do this by running `make shaft smiko-cfw` in the root of this repository (make sure you clone with submodules ON). Install these utilities to your Linux system with `sudo make install`, if you ever wish to remove them, binaries are placed in /usr/local/bin, and firmware in /usr/share/smiko/firmware.
 BootCon works by flashing our custom firmware image to the RW_A section of firmware, a non-booting image to RO_A, and a dev-signed RO 0.0.9 image to the RO_B which allows us to run the ancient 0.0.6 image which we flash to RW_B, and doesnt lower the GLOBALSEC execution level, allowing our CFW more control over the chip. It uses the SPIFlash utility in the CR50's bootrom to bypass both downgrade protections and restrictions against writing to the active RO image which are present in both the typical updater and the rescue utility. It then requires you to use the outdated version's console to write arbitrary data to GLOBALSEC registers, unlocking the custom firmware's execution and then requires you to jump to that custom firmware, where we're able to take full control.
 
 First thing's first, you'll want to build the firmware and injector. You can do this by running `make shaft smiko-cfw` in the root of this repository (make sure you clone with submodules ON). Install these utilities to your Linux system with `sudo make install`, if you ever wish to remove them, binaries are placed in /usr/local/bin, and firmware in /usr/share/smiko/firmware.
@@ -55,6 +50,6 @@ The Extortion method is higher matinence than the BootCon method, and has a much
 
 To get started, build the required utilities and firmware with `make shaft smiko-cfw smiko` and install them with `sudo make install`. Next get an rma shim and use `sudo ./patcher.sh shim.bin` in the root of the repo (see [The Sh1mmer Website](https://sh1mmer.me) for info on how to flash USB drives if you don't know how).
 
-Solder to your devices UART TX line for the CR50, and ensure it's mapped somewhere under /dev/ttyUSB# (Note: SuzyQ does not work for this due tostill not actually being uart). Run `sudo shaft -f build/firmware/smiko-bootcon-cfw.bin --rescue --extortion`, and it will automatically flash and run the CFW image for you.
+Solder to your devices UART TX line for the CR50, and ensure it's mapped somewhere under /dev/ttyUSB# (Note: SuzyQ does not work for this due to not being active yet). Run `sudo shaft -f build/firmware/smiko-bootcon-cfw.bin --rescue --extortion`, and it will automatically flash and run the CFW image for you.
 
 In order to prevent a brick, after the cfw image has been flashed and is running, you will need to launch your RMA shim image and run the following commands: `smiko --flash /usr/share/smiko/firmware/smiko-update-cfw.bin --section RW_B`, pop open the CCD console and run `jump RW_B`, and then `smiko --flash /opt/google/cr50/cr50-0-5-9.bin.prod --section RW_A` back on the RMA shim.
