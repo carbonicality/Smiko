@@ -1,5 +1,5 @@
 # Smiko
-Smiko - Smite Management by hIjacKing the cr50
+Smiko - **S**mite **M**anagement by h**I**jac**K**ing the cr50
 
 ![Smiko Logo](/logo.png)
 
@@ -8,14 +8,14 @@ Smiko - Smite Management by hIjacKing the cr50
 ## Overview
 Smiko is a collection of reverse engineered software and tools regarding the Google Security Chip. The tools in this repository are designed to interact with and in some cases exploit Google's lineup of chips to perform custom actions, extract data, and more.
 
-The Google Security Chip (TM) is Google's proprietary off-shelf SoC that runs alongside the main processor in millions of licensed products (primarily Chromebooks, Google Pixel Phones, and Google's physical servers), serving a suite of hardware and software protection mechanisms to enable maximum control of the device on the hardware level whilst also preventing malicious tampering. Smiko aims to open-source this technology for security researchers to be able to understand and work with, and lead to overall improvement of this technology as time advances.
+The Google Security Chip™ is Google's proprietary off-shelf SoC that runs alongside the main processor in millions of licensed products (primarily Chromebooks, Google Pixel Phones, and Google's physical servers), serving a suite of hardware and software protection mechanisms to enable maximum control of the device on the hardware level whilst also preventing malicious tampering. Smiko aims to open-source this technology for security researchers to be able to understand and work with, and lead to overall improvement of this technology as time advances.
 
 You can see a writeup of Smiko on [the website](https://smiko.havenoverflow.dev).
 
 ## Utilities Usage
 There are many ways by which Smiko (and all software contained in this repo) can be utilized, of which here are the most straight-forward:
 - [RMA Shim](/docs/rma_shim.md) (Safest, Recommended): Use Smiko or RMASmoke using the TPM link existing on a modified RMA shim running in recovery mode.
-- [Recovery Image](/docs/reco_image.md) ~~(Universal): Use Smiko or RMASmoke using the TPM link existing on a patched Recovery Image.~~ (This will be replaced by Recomm3r, a project by crosbreaker that provides a GUI to modified recovery images)
+- [Recovery Image](/docs/reco_image.md) (Universal): Use Recomm3r (modified recovery image by crosbreaker) in order to run Smiko/RMAsmoke via the TPM link existing in a recovery image.
 - [SuzyQ](/docs/suzyq.md) (Universal, Recommended): Use Smiko using a GSC Debug Accessory and a piece of software.
 - [Servo/C2D2](/docs/servo.md) (Universal): Use Smiko or Shaft using a Servo/C2D2 hardware header (Requires soldering skill!)
 - [Developer Mode](/docs/devmode.md): Use Smiko or RMASmoke using the command line on a Chromebook in Developer Mode (Cannot be done whilst enrolled _unless_ you're running [Shimboot](https://github.com/ading2210/shimboot) or a similar alternative).
